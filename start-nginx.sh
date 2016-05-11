@@ -1,9 +1,9 @@
 #!/bin/sh
 
 cat > /etc/nginx/nginx_params <<-EOF
-set \$proxy_timeout $PROXY_TIMEOUT;
-set \$wsgi_port $WSGI_PORT;
-set \$wsgi_host $WSGI_HOST;
+proxy_send_timeout $PROXY_TIMEOUT;
+proxy_read_timeout $WSGI_PORT;
+proxy_pass http://$wsgi_host:$wsgi_port;
 EOF
 
 nginx -g 'daemon off;'
