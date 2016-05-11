@@ -5,7 +5,6 @@ RUN yum -y update \
 ENV WSGI_PORT "8000"
 ENV WSGI_HOST "localhost"
 ENV PROXY_TIMEOUT "90"
-ENV NGINX_PORT "80"
     
 # Create a directory for config 
 COPY ./nginx.conf /etc/nginx/nginx.conf
@@ -20,6 +19,6 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 
 
 EXPOSE 80
-VOLUME ["/etc/nginx/config.d"]
+VOLUME ["/etc/nginx/conf.d"]
 
 CMD ["start-nginx.sh"]
