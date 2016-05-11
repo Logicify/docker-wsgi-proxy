@@ -8,7 +8,7 @@ ENV PROXY_TIMEOUT "90"
 ENV NGINX_PORT "80"
     
 # Create a directory for config 
-COPY ./nginx.template /etc/nginx/nginx.template
+COPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./start-nginx.sh /usr/bin/start-nginx.sh
 COPY ./mime.types /etc/nginx/mime.types
 
